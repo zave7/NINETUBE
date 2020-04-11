@@ -14,7 +14,13 @@ public class homeController {
 
     @RequestMapping("/test")
     public ModelAndView createQuestion(){
-        ModelAndView mv = new ModelAndView("jsp/test");
+        ModelAndView mv = new ModelAndView("user/test");
+        return mv;
+    }
+
+    @RequestMapping("/admin")
+    public ModelAndView adminMainPage(){
+        ModelAndView mv = new ModelAndView("admin/index");
         return mv;
     }
 }
