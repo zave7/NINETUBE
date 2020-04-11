@@ -12,6 +12,12 @@ public class homeController {
         return "index";
     }
 
+    @RequestMapping("/test")
+    public ModelAndView createQuestion(){
+        ModelAndView mv = new ModelAndView("jsp/test");
+        return mv;
+    }
+
     @RequestMapping("/main")
     public String mainpage() {
         return "main";
