@@ -2,12 +2,18 @@ package com.project.ninetube.main;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class homeController {
 
-    @RequestMapping("/")
+    @RequestMapping("/index")
     public String home() {
-        return "Hello, Spring boot!";
+        return "index";
     }
+
+    /*@RequestMapping("/")
+    public String index() {
+        return "index";
+    }*/
 }
