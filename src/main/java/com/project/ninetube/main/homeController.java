@@ -9,16 +9,13 @@ public class homeController {
 
     @RequestMapping("/index")
     public String home() {
-        return "index";
+        return "Hello, Spring boot!";
     }
 
     @RequestMapping("/main")
-    public String mainpage() {
-        return "main";
+    public ModelAndView createQuestion(){
+        ModelAndView mv = new ModelAndView("main");
+        return mv;
     }
 
-    /*@RequestMapping("/")
-    public String index() {
-        return "index";
-    }*/
 }
