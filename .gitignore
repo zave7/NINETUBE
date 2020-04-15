@@ -150,4 +150,6 @@ buildNumber.properties
 
 .mvn/timing.properties
 
+.idea/misc.xml
+
 ########## -- Maven.gitignore End
