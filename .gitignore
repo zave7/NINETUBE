@@ -150,4 +150,6 @@ buildNumber.properties
 
 .mvn/timing.properties
 
+.idea/uiDesigner.xml
+
 ########## -- Maven.gitignore End
