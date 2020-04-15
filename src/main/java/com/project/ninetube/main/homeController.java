@@ -13,20 +13,20 @@ public class homeController {
     }
 
     @RequestMapping("/test")
-    public ModelAndView createQuestion(){
+    public ModelAndView mainpage() {
         ModelAndView mv = new ModelAndView("user/test");
         return mv;
     }
 
-    @RequestMapping("/admin")
-    public ModelAndView adminMainPage(){
-        ModelAndView mv = new ModelAndView("admin/index");
-        return mv;
+    @RequestMapping("/main_test")
+    public String maintest() {
+        return "webapp/WEB-INF/NINETUBE/index.jsp";
     }
 
-    @RequestMapping("/main")
-    public String mainpage() {
-        return "main";
+    /*@RequestMapping("/")
+    public String index() {
+        return "index";
+    }*/
     }
 
     /*@RequestMapping("/")
