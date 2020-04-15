@@ -9,13 +9,22 @@ public class homeController {
 
     @RequestMapping("/index")
     public String home() {
-        return "Hello, Spring boot!";
+        return "index";
     }
 
     @RequestMapping("/main")
-    public ModelAndView createQuestion(){
-        ModelAndView mv = new ModelAndView("main");
+    public ModelAndView mainpage() {
+        ModelAndView mv = new ModelAndView("user/test");
         return mv;
     }
 
+    @RequestMapping("/main_test")
+    public String maintest() {
+        return "webapp/WEB-INF/NINETUBE/index.jsp";
+    }
+
+    /*@RequestMapping("/")
+    public String index() {
+        return "index";
+    }*/
 }
