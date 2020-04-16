@@ -27,7 +27,6 @@ public class homeController {
     public String index() {
         return "index";
     }*/
-    }
 
     /*@RequestMapping("/")
     public String index() {
