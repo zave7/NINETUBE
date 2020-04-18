@@ -23,4 +23,10 @@ public class homeController {
         ModelAndView mv = new ModelAndView("admin/index");
         return mv;
     }
+
+    @RequestMapping("/admin/user")
+    public ModelAndView adminUserPage(){
+        ModelAndView mv = new ModelAndView("admin/user");
+        return mv;
+    }
 }
