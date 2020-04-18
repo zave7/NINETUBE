@@ -154,4 +154,6 @@ buildNumber.properties
 
 /**/*.orig
 
+.idea/uiDesigner.xml
+
 ########## -- Maven.gitignore End
