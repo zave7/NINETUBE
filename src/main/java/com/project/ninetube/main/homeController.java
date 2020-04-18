@@ -12,9 +12,32 @@ public class homeController {
         return "Hello, Spring boot!";
     }
 
-    @RequestMapping("/test")
+<<<<<<< Updated upstream
     public ModelAndView createQuestion(){
         ModelAndView mv = new ModelAndView("jsp/test");
         return mv;
     }
 }
+=======
+    @RequestMapping("/main")
+    public ModelAndView mainpage() {
+        ModelAndView mv = new ModelAndView("mainpage");
+        return mv;
+    }
+
+    @RequestMapping("/main2")
+    public ModelAndView mainpage2() {
+        ModelAndView mv = new ModelAndView("mainpage_2");
+        return mv;
+    }
+
+    @RequestMapping("/main2/contents")
+    public ModelAndView contentspage() {
+        ModelAndView mv = new ModelAndView("ncontents/contents");
+        return mv;
+    }
+
+
+    }
+
+>>>>>>> Stashed changes
