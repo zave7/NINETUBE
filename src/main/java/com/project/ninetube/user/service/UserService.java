@@ -1,12 +1,14 @@
 package com.project.ninetube.user.service;
 
 import com.project.ninetube.user.entity.User;
-import com.project.ninetube.user.repository.UserRepository;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
 
-@Service
-public class UserService {
-
+public interface UserService {
+    // TODO 아이디 중복 검사
+    public int checkUserDuplicatedId(String userId);
+    // TODO 회원가입 시 유저 정보 받아와서 인서트
+    public int createUser(User user);
+    // TODO 비밀번호 체크
+    public int checkPassword(User user);
+    // TODO 회원정보 유효성 검증
+    public boolean vaildateUserData(User user);
 }
