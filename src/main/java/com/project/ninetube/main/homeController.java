@@ -12,19 +12,6 @@ public class homeController {
         return "Hello, Spring boot!";
     }
 
-<<<<<<< Updated upstream
-    public ModelAndView createQuestion(){
-        ModelAndView mv = new ModelAndView("user/test");
-        return mv;
-    }
-
-    @RequestMapping("/admin")
-    public ModelAndView adminMainPage(){
-        ModelAndView mv = new ModelAndView("admin/index");
-        return mv;
-    }
-}
-=======
     @RequestMapping("/main")
     public ModelAndView mainpage() {
         ModelAndView mv = new ModelAndView("mainpage");
@@ -42,8 +29,5 @@ public class homeController {
         ModelAndView mv = new ModelAndView("ncontents/contents");
         return mv;
     }
+}
 
-
-    }
-
->>>>>>> Stashed changes
