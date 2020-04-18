@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class NinetubeApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NinetubeApplication.class, args);
+        SpringApplication.run(NinetubeApplication.class);
     }
 
 }
