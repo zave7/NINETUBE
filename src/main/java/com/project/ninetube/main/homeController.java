@@ -24,12 +24,6 @@ public class homeController {
         return mv;
     }
 
-    @RequestMapping("/admin")
-    public ModelAndView adminMainPage(){
-        ModelAndView mv = new ModelAndView("admin/index");
-        return mv;
-    }
-
     @RequestMapping("/admin/user")
     public ModelAndView adminUserPage(){
         ModelAndView mv = new ModelAndView("admin/user");
@@ -43,6 +37,4 @@ public class homeController {
     }
 
 
-    }
-
->>>>>>> Stashed changes
+}
