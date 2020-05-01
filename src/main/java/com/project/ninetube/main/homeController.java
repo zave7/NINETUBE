@@ -8,13 +8,14 @@ import org.springframework.web.servlet.ModelAndView;
 public class homeController {
 
     @RequestMapping("/")
-    public String home() {
-        return "Hello, Spring boot!";
+    public ModelAndView home() {
+        ModelAndView mv = new ModelAndView("home/home");
+        return mv;
     }
 
-    @RequestMapping("/main")
+/*    @RequestMapping("/main")
     public ModelAndView mainpage() {
-        ModelAndView mv = new ModelAndView("mainpage");
+        ModelAndView mv = new ModelAndView("home/home");
         return mv;
     }
 
@@ -28,6 +29,6 @@ public class homeController {
     public ModelAndView contentspage() {
         ModelAndView mv = new ModelAndView("ncontents/contents");
         return mv;
-    }
+    }*/
 }
 
