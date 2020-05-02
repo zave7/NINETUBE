@@ -94,8 +94,9 @@
         <div class="personal_photo">
             <img src="resources/home/img/man2.png" alt="man">
         </div>
+
         <div class="personal_info">
-            <p class="person_name">GilDong Hong</p>
+            <p class="person_name">dd</p>
             <p>amogae@gmail.com</p>
             <br/>
             <p><a href="#" class="blue_name">Google 계정관리</a></p>
