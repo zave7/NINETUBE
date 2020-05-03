@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language='java' %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -111,289 +113,24 @@
     </div>
     <!--동영상 있는 페이지-->
     <h2>맞춤동영상</h2>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/xshwpKs2RNA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">아련한 동양풍 모음♬ (슬프고 몽환적인 공부할 때 듣는 음악)</p>
-            </div>
+    <c:forEach var="video" items="${videoList}">
+        <%--<fmt:formatDate var="CREATEDAT" value="${video.CREATEDAT}" pattern="yyyy.MM-dd"/>--%>
+        <article class="video">
+            <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/xshwpKs2RNA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="info">
+                <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
+                <div class="info2">
+                    <p class="title">${video.VFILENAME}</p>
+                </div>
 
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 53만회·8개월 전</p>
+                <div class="info3">
+                    <br />
+                    <p class="maker">${video.CREATOR}</p>
+                    <p class="time">조회수 ${video.VIEWCNT}회·</p>
+                </div>
             </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
-    <article class="video">
-        <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="info">
-            <div class="info_img"><img src="resources/home/img/tido.png" alt="piano"></div>
-            <div class="info2">
-                <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
-            </div>
-            <div class="info3">
-                <br />
-                <p class="maker">Tido Kang</p>
-                <p class="time">조회수 515만회·1년 전</p>
-            </div>
-        </div>
-    </article>
+        </article>
+    </c:forEach>
 </section>
 
 

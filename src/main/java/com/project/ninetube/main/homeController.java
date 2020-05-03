@@ -2,6 +2,8 @@ package com.project.ninetube.main;
 
 import com.project.ninetube.user.entity.User;
 import com.project.ninetube.user.service.UserService;
+import com.project.ninetube.video.entity.Video;
+import com.project.ninetube.video.service.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,17 +11,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @RestController
 public class homeController {
 
     @Autowired
     UserService userService;
+    @Autowired
+    VideoService videoService;
 
     @RequestMapping("/")
-    public ModelAndView home(Pageable pageable) {
-        Page<User> list = userService.getUserList(pageable);
+    public ModelAndView home() {
+        List<Video> vlist = videoService.findVideoList();
+        for(int i = 0 ; i < vlist.size(); i++){
+            Video v = vlist.get(i);
+            System.out.println(v.VFILENAME);
+        }
         ModelAndView mv = new ModelAndView("home/home");
-        mv.addObject("userList", list);
+        mv.addObject("videoList", vlist);
         return mv;
     }
 
