@@ -1,5 +1,7 @@
 package com.project.ninetube.main;
 
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,15 +20,9 @@ public class homeController {
         return mv;
     }
 
-    @RequestMapping("/admin")
-    public ModelAndView adminMainPage(){
-        ModelAndView mv = new ModelAndView("admin/index");
-        return mv;
-    }
-
-    @RequestMapping("/admin/user")
+    @RequestMapping("/com/project/ninetube/admin/user")
     public ModelAndView adminUserPage(){
-        ModelAndView mv = new ModelAndView("admin/user");
+        ModelAndView mv = new ModelAndView("com/project/ninetube/admin/user");
         return mv;
     }
 
@@ -36,5 +32,11 @@ public class homeController {
         return mv;
     }
 
+    //관리자 - 관리자 메인 페이지
+    @GetMapping(value = "/admin")
+    public String adminMainPage(Model model) {
+//        model.addAttribute();
+        return "admin/index";
+    }
 
 }

@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title>Admin Page</title>
 
   <!-- Custom fonts for this template-->
   <link href="<%=request.getContextPath()%>/resources/admincontents/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -51,20 +51,12 @@
             Interface
           </div>
 
-          <!-- Nav Item - Pages Collapse Menu -->
-          <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-              <i class="fas fa-fw fa-cog"></i>
-              <span>Home</span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-              <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" href="buttons.html">Buttons</a>
-                <a class="collapse-item" href="cards.html">Cards</a>
-              </div>
-            </div>
-          </li>
+         <!-- Nav Item - Tables -->
+           <li class="nav-item">
+             <a class="nav-link" href="<%=request.getContextPath()%>/admin/user">
+               <i class="fas fa-fw fa-table"></i>
+               <span>사용자 관리</span></a>
+           </li>
 
           <!-- Nav Item - Utilities Collapse Menu -->
           <li class="nav-item">
@@ -116,13 +108,6 @@
             <a class="nav-link" href="charts.html">
               <i class="fas fa-fw fa-chart-area"></i>
               <span>Charts</span></a>
-          </li>
-
-          <!-- Nav Item - Tables -->
-          <li class="nav-item">
-            <a class="nav-link" href="<%=request.getContextPath()%>/admin/user">
-              <i class="fas fa-fw fa-table"></i>
-              <span>사용자 관리</span></a>
           </li>
 
           <!-- Divider -->
