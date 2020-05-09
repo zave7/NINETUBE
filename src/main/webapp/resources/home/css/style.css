@@ -307,3 +307,100 @@ h4{
 iframe{
     border: 0;
 }
+
+
+
+.box_page{
+    width: 80%;
+    height: 2400px;
+    float: left;
+    background-color: #f6f6f6;
+}
+.record{
+    width: 100%;
+    height: 600px;
+    margin-left: 50px;
+}
+.record_title{
+    width: 100%;
+    height: 5%;
+    margin: 6px;
+    padding: 10px;
+    font-size: 19px;
+    position: relative;
+}
+.record_title img{
+    margin-right: 20px;
+}
+.all{
+   position: absolute;
+   top: 10px;
+   right: 80px;
+}
+.all a{
+    font-size: 14px;
+    color: blue;
+}
+.box_video{
+    width: 23%;
+    height: 190px;
+    margin: 20px 5px 20px 3px;
+    float: left;
+}
+.box_video .youtube{
+    width: 100%;
+    height: 70%;
+}
+#user_info{
+    width: 20%;
+    height: 400px;
+    float: left;
+}
+#user_info .user{
+    width: 80%;
+    height: 300px;
+    margin: 0 auto;
+    margin-top : 60px;
+    text-align: center;
+}
+.user p {
+    margin-top: 30px;
+}
+.user ul{
+    margin-top: 30px;
+}
+.user li{
+    width: 80%;
+    border-top: 1px solid #D8D8D8;
+    text-align: left;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 20px;
+    font-size: 14px;
+}
+.user li:nth-child(3){
+    border-bottom: 1px solid #D8D8D8;
+}
+.box_info1{
+    width: 100%;
+    height: 23%;
+    overflow: hidden;
+    margin-bottom: 1px;
+}
+.box_info1 .title{
+    padding-top: 5px;
+    padding-bottom: 1px;
+}
+.box_info2{
+    margin-bottom: 10px;
+}
+.box_info2{
+    padding-top: 4px;
+}
+.later, .play_list, .like{
+    width: 100%;
+    height: 600px;
+    float: left;
+    margin-left: 50px;
+    border-top: 1px solid #D8D8D8;
+}

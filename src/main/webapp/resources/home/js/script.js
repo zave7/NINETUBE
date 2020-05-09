@@ -64,3 +64,13 @@ open_menu.addEventListener('click',function(){
     section.classList.toggle('wrap');
 })
 
+var box = doc.querySelector('.box');
+var wrap = doc.getElementById('wrap');
+var boxPage = doc.getElementById('boxPage')
+var userInfo = doc.getElementById('user_info')
+
+box.addEventListener('click',function(){
+    wrap.classList.replace('visible','none');
+    boxPage.classList.replace('none','visible');
+    userInfo.classList.replace('none','visible');
+})

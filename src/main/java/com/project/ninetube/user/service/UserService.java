@@ -29,4 +29,7 @@ public class UserService {
         return list;
     }
 
+    public User findByACCOUNT(String ACCOUNT) {
+        return userRepository.findByACCOUNT(ACCOUNT);
+    }
 }

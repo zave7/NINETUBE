@@ -41,7 +41,7 @@
     </ul>
     <hr />
     <ul>
-        <li><a href="#"><img src="resources/home/img/movie.png" alt="movie">보관함</a></li>
+        <li class="box"><a href="#"><img src="resources/home/img/movie.png" alt="movie">보관함</a></li>
         <li><a href="#"><img src="resources/home/img/countdown.png" alt="count">시청기록</a></li>
         <li><a href="#"><img src="resources/home/img/video.png" alt="video">내 동영상</a></li>
         <li><a href="#"><img src="resources/home/img/clock.png" alt="clock">나중에 볼 동영상</a></li>
@@ -98,8 +98,8 @@
         </div>
 
         <div class="personal_info">
-            <p class="person_name">dd</p>
-            <p>amogae@gmail.com</p>
+            <p class="person_name">${user.NAME}</p>
+            <p>${user.EMAIL}</p>
             <br/>
             <p><a href="#" class="blue_name">Google 계정관리</a></p>
         </div>
@@ -131,6 +131,80 @@
             </div>
         </article>
     </c:forEach>
+    <!-- 보관함 눌렀을 때 나타나는 페이지 -->
+    <div class="box_page none" id="boxPage">
+        <div class="record">
+            <div class="record_title"><p><img src="images/countdown.png" alt="record"> 기록</p>
+                <div class="all"><a href="#">모두 보기</a></div>
+            </div>
+            <div class="box_video">
+                <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="box_info1">
+                    <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
+                </div>
+                <div class="box_info2">
+                    <p class="maker">Tido Kang</p>
+                    <p class="time">조회수 515만회·1년 전</p>
+                </div>
+            </div>
+        </div>
+        <div class="later">
+            <div class="record_title"><p><img src="images/clock.png" alt="later"> 나중에 볼 동영상</p>
+                <div class="all"><a href="#">모두 보기</a></div>
+            </div>
+            <div class="box_video">
+                <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="box_info1">
+                    <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
+                </div>
+                <div class="box_info2">
+                    <p class="maker">Tido Kang</p>
+                    <p class="time">조회수 515만회·1년 전</p>
+                </div>
+            </div>
+        </div>
+        <div class="play_list">
+            <div class="record_title"><p><img src="images/open-menu.png" alt="list"> 재생목록</p>
+                <div class="all"><a href="#">모두 보기</a></div>
+            </div>
+            <div class="box_video">
+                <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="box_info1">
+                    <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
+                </div>
+                <div class="box_info2">
+                    <p class="maker">Tido Kang</p>
+                    <p class="time">조회수 515만회·1년 전</p>
+                </div>
+            </div>
+        </div>
+        <div class="like">
+            <div class="record_title"><p><img src="images/like.png" alt="like"> 좋아요 표시한 동영상</p>
+                <div class="all"><a href="#">모두 보기</a></div>
+            </div>
+            <div class="box_video">
+                <div class="youtube"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/uw_elzX7Oo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="box_info1">
+                    <p class="title">공부할때 듣는 음악 모음♬ (집중력 높이는 음악) |아련한, 슬픈, 잔잔한 음악 1시간</p>
+                </div>
+                <div class="box_info2">
+                    <p class="maker">Tido Kang</p>
+                    <p class="time">조회수 515만회·1년 전</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="user_info" class="none">
+        <div class="user">
+            <img src="images/users.png" alt="user">
+            <p>Hong Gil Dong</p>
+            <ul>
+                <li>구독</li>
+                <li>업로드</li>
+                <li>좋아요</li>
+            </ul>
+        </div>
+    </div>
 </section>
 
 

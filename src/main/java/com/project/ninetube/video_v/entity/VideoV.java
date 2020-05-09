@@ -1,8 +1,6 @@
-package com.project.ninetube.video.entity;
+package com.project.ninetube.video_v.entity;
 
-import com.project.ninetube.user.entity.User;
 import lombok.*;
-import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,7 +11,7 @@ import java.util.Date;
 @Getter
 @Entity
 @Table(name = "NVIDEO_V")
-public class Video implements Serializable {
+public class VideoV implements Serializable {
 
     @Id
     @Column
@@ -66,8 +64,8 @@ public class Video implements Serializable {
     private User user;*/
 
     @Builder
-    public Video(String OID, String VFILENAME, int VIDEOSIZE, String CREATOR, LocalDateTime CREATEDAT, int VIEWCNT, int GOODCNT, int BADCNT,
-                 String RUNNIGTIME, String DESCRIPTION, int DELSTATUS, Date DELDATE, Date UPDATEDATE, String CATEGORYOID, String TAG){
+    public VideoV(String OID, String VFILENAME, int VIDEOSIZE, String CREATOR, LocalDateTime CREATEDAT, int VIEWCNT, int GOODCNT, int BADCNT,
+                  String RUNNIGTIME, String DESCRIPTION, int DELSTATUS, Date DELDATE, Date UPDATEDATE, String CATEGORYOID, String TAG){
         this.OID = OID;
         this.VFILENAME = VFILENAME;
         this.VIDEOSIZE = VIDEOSIZE;

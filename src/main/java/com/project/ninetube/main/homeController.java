@@ -2,8 +2,8 @@ package com.project.ninetube.main;
 
 import com.project.ninetube.user.entity.User;
 import com.project.ninetube.user.service.UserService;
-import com.project.ninetube.video.entity.Video;
-import com.project.ninetube.video.service.VideoService;
+import com.project.ninetube.video_v.entity.VideoV;
+import com.project.ninetube.video_v.service.VideoVService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -19,17 +19,15 @@ public class homeController {
     @Autowired
     UserService userService;
     @Autowired
-    VideoService videoService;
+    VideoVService videoVService;
 
     @RequestMapping("/")
     public ModelAndView home() {
-        List<Video> vlist = videoService.findVideoList();
-        for(int i = 0 ; i < vlist.size(); i++){
-            Video v = vlist.get(i);
-            System.out.println(v.VFILENAME);
-        }
+        List<VideoV> vlist = videoVService.findVideoList();
+        User user = userService.findByACCOUNT("TEST");
         ModelAndView mv = new ModelAndView("home/home");
         mv.addObject("videoList", vlist);
+        mv.addObject("user",user);
         return mv;
     }
 
