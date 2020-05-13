@@ -6,15 +6,15 @@
 	<div id="gilbut" class="membership">
 		<%@ include file="/WEB-INF/NINETUBE/naccount/common/jsp/user-header.jsp" %>
         <section id="membership" class="joinpage">
-            <form class="form-horizontal frmEstimate" role="form" name="frm_input" id="frm_input" action="/join/join_process" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="account" id="h_account" value="">
-            <input type="hidden" name="name" id="h_name" value="">
-            <input type="hidden" name="password" id="h_password" value="">
-            <input type="hidden" name="gender" id="h_gender" value="">
-            <input type="hidden" name="birth" id="h_birth" value="">
-            <input type="hidden" name="email" id="h_email" value="">
+            <form class="form-horizontal frmEstimate">
                 <article class="mem_box">
                     <h2>NINETUBE 회원가입</h2>
+                    <div class="ipt_form">
+                        <label class="tit">아이디</label>
+                        <div class="ipt_wrap">
+                            <input type="text" name="id" id="id" class="input" placeholder="6자 이상 16자 이하로 입력해주세요." value="">
+                        </div>
+                    </div>
                     <div class="ipt_form">
                         <label class="tit">이메일 주소</label>
                         <div class="ipt_wrap ipt_email">
@@ -96,5 +96,6 @@
         </section>
 		<%@ include file="/WEB-INF/NINETUBE/naccount/common/jsp/user-footer.jsp" %>
 	</div>
+	<script src="/resources/userAuth/js/signUp.js"></script>
 </body>
 </html>

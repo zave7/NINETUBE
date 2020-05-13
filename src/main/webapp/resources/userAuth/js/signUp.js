@@ -1,31 +1,73 @@
 
-const dom_signUp = document.getElementByClass('nsignup_signup_submit')[0];
+const dom_signUp = document.getElementsByClassName('nsignup_signup_submit')[0];
 
 dom_signUp.addEventListener("click", function() {
+    console.log("클릭");
+    const info = signUp();
 
-    e.preventDefault
+
 });
 
-const signUp = function(subObj) {
-    // hidden
-    const h_account = document.getElementById('h_account');
-    const h_name = document.getElementById('h_name');
-    const h_password = document.getElementById('h_password');
-    const h_gender = document.getElementById('h_gender');
-    const h_birth = document.getElementById('h_birth');
-    const h_email = document.getElementById('h_email');
+const signUp = function() {
+
+    const account = document.getElementById('account');
+    const name = document.getElementById('name');
+    const password = document.getElementById('password');
+    const gender = document.getElementById('gender');
+    const birthday = document.createElement('input');
+    birthday.setAttribute('name', 'birthday');
+    const email = document.createElement('input');
+    email.setAttribute('name', 'email');
 
     // info
-    const value_account = document.getElementById('account').getAttribute('value');
-    setAttribute(h_account, valueAccount);
-    const value_name = document.getElementById('name').getAttribute('value');
-    setAttribute(h_name, valueName);
-    const value_password = document.getElementById('password').getAttribute('value');
-    setAttribute(h_password, valuePassword);
-    const value_gender = document.getElementById('gender').getAttribute('value');
+    const value_account = account.value;
+    const value_name = name.value;
+    const value_password = password.value;
+    const value_gender = gender.value;
 
+    const birthday_year = document.getElementById('birthday_year');
+    const birthday_month = document.getElementById('birthday_month');
+    const birthday_day = document.getElementById('birthday_day');
+    const value_birthday = value_birthday_year.options[birthday_year.selectedIndex].value
+                            + value_birthday_month.options[birthday_month.selectedIndex].value
+                            + value_birthday_day.options[birthday_day.selectedIndex].value;
+
+    const value_email = document.getElementById('email_1').value + '@' + document.getElementById('email_2').value;
+
+    const resultObject = {};
+
+    setObjAttribute(resultObject, account, valueAccount);
+    setObjAttribute(resultObject, name, valueName);
+    setObjAttribute(resultObject, password, valuePassword);
+    setObjAttribute(resultObject, gender, value_gender);
+    setObjAttribute(resultObject, birthday_day, value_birthday);
+    setObjAttribute(resultObject, email, value_email);
+
+    return resultObject;
 }
 
-const setAttribute = function(obj, value) {
-    obj.setAttribute('value', value);
+const setObjAttribute = function(resultObject, obj, value) {
+
+    const hidden = document.createElement('input');
+
+    hidden.setAttribute('type', 'hidden');
+    hidden.setAttribute('name', obj.getAttribute('name'));
+
+    obj.setAttribute('_value', value);
+    resultObject[obj.getAttribute('name')] = obj;
+}
+
+const formSubmit = function(objects, charset, method, action) {
+    const form = document.createElement("form");
+
+    form.setAttribute("charset", "UTF-8");
+    form.setAttribute("method", "Post");  //Post 방식
+    form.setAttribute("action", "/user/signup"); //요청 보낼 주소
+
+    for(let obj in objects) {
+        form.appendChild(obj);
+        console.log(obj.value);
+    }
+
+    form.submit();
 }
