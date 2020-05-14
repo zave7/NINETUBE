@@ -55,7 +55,7 @@
                     </div>
                     <div class="ipt_form">
                         <label class="tit">성별</label>
-                        <div class="ipt_wrap ipt_radio">
+                        <div class="ipt_wrap ipt_radio select_gender">
                             <div class="radio_wrap">
                                 <input type="radio" name="GM_GENDER" value="M" id="male">
                                 <label for="male">
