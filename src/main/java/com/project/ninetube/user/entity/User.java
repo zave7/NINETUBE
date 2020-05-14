@@ -1,42 +1,70 @@
 package com.project.ninetube.user.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 
-
 import javax.persistence.*;
+import java.util.Date;
 
-
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
 @Entity
+@Data
 @DynamicInsert
-@Getter @Setter
 @Table(name = "NUSER")
 public class User {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
-    private String oid;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public String OID;
 
-    private String account;
+    @Column
+    public String ACCOUNT;
 
-    private String name;
+    @Column
+    public String NAME;
 
-    private String password;
+    @Column
+    public String PASSWORD;
 
-    private int delstatus;
+    @Column
+    public int DELSTATUS;
 
-    private int gender;
+    @Column
+    public int GENDER;
 
-    private String birth;
+    @Column
+    public String BIRTH;
 
-    private char logintype;
+    @Column
+    public char LOGINTYPE;
 
-    private String createdate;
+    @Column
+    public Date CREATEDATE;
 
-    private String deldate;
+    @Column
+    public Date DELDATE;
 
-    private int accessgrade;
+    @Column
+    public int ACCESSGRADE;
 
-    private String email;
+    @Column
+    public String EMAIL;
+
+    @Builder
+    public User(String OID, String ACCOUNT, String NAME, String PASSWORD, int DELSTATUS, int GENDER, String BIRTH, char LOGINTYPE, Date CREATEDATE, Date DELDATE, int ACCESSGRADE, String EMAIL){
+        this.OID = OID;
+        this.ACCOUNT = ACCOUNT;
+        this.NAME = NAME;
+        this.PASSWORD = PASSWORD;
+        this.DELSTATUS = DELSTATUS;
+        this.GENDER = GENDER;
+        this.BIRTH = BIRTH;
+        this.LOGINTYPE = LOGINTYPE;
+        this.CREATEDATE = CREATEDATE;
+        this.DELDATE = DELDATE;
+        this.ACCESSGRADE = ACCESSGRADE;
+        this.EMAIL = EMAIL;
+    }
 }

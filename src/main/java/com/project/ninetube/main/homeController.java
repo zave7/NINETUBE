@@ -1,28 +1,53 @@
 package com.project.ninetube.main;
 
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.project.ninetube.user.entity.User;
+import com.project.ninetube.user.service.UserService;
+import com.project.ninetube.video_v.entity.VideoV;
+import com.project.ninetube.video_v.service.VideoVService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @RestController
 public class homeController {
 
-    @RequestMapping("/")
-    public String home() {
-        return "Hello, Spring boot!";
-    }
+    @Autowired
+    UserService userService;
+    @Autowired
+    VideoVService videoVService;
 
-    @RequestMapping("/test")
-    public ModelAndView createQuestion(){
-        ModelAndView mv = new ModelAndView("user/test");
+    @RequestMapping("/")
+    public ModelAndView home() {
+        List<VideoV> vlist = videoVService.findVideoList();
+        User user = userService.findByACCOUNT("TEST");
+        ModelAndView mv = new ModelAndView("home/home");
+        mv.addObject("videoList", vlist);
+        mv.addObject("user",user);
         return mv;
     }
 
-    @RequestMapping("/com/project/ninetube/admin/user")
-    public ModelAndView adminUserPage(){
-        ModelAndView mv = new ModelAndView("com/project/ninetube/admin/user");
+    @RequestMapping("/USER/list")
+    public ModelAndView listQuestion(Pageable pageable){
+        Page<User> list = userService.findAll(pageable);
+        ModelAndView mv = new ModelAndView("home/TESTLIST");
+        mv.addObject("userList", list);
+        return mv;
+    }
+
+/*    @RequestMapping("/main")
+    public ModelAndView mainpage() {
+        ModelAndView mv = new ModelAndView("home/home");
+        return mv;
+    }
+
+    @RequestMapping("/main2")
+    public ModelAndView mainpage2() {
+        ModelAndView mv = new ModelAndView("mainpage_2");
         return mv;
     }
 
@@ -30,13 +55,6 @@ public class homeController {
     public ModelAndView contentspage() {
         ModelAndView mv = new ModelAndView("ncontents/contents");
         return mv;
-    }
-
-    //관리자 - 관리자 메인 페이지
-    @GetMapping(value = "/admin")
-    public String adminMainPage(Model model) {
-//        model.addAttribute();
-        return "admin/index";
-    }
-
+    }*/
 }
+
