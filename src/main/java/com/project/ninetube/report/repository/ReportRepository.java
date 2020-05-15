@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface ReportRepository extends JpaRepository<Report, Long> {
 
-    public List<Report> findAllByDelstatus(int value);
+//    public List<Report> findAllByDelstatus(int value);
 
 }

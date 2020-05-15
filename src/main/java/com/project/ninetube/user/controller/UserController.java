@@ -24,11 +24,11 @@ public class UserController {
         return "admin/user";
     }
 
-    @GetMapping(value = "/admin/userReport")
-    public String getAllUserReport(Model model) {
-        List<User> userList = userService.getAllUsersDelstatus(0);
-        model.addAttribute("userList", userList);
-
-        return "admin/user";
-    }
+//    @GetMapping(value = "/admin/userReport")
+//    public String getAllUserReport(Model model) {
+//        List<User> userList = userService.getAllUsersDelstatus(0);
+//        model.addAttribute("userList", userList);
+//
+//        return "admin/user";
+//    }
 }

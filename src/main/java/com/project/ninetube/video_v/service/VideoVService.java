@@ -18,4 +18,8 @@ public class VideoVService {
     public List<VideoV> findVideoList(){
         return videoVRepository.findAll();
     }
+
+    public List<VideoV> findByCreator(String creator){
+        return videoVRepository.findByCreator(creator);
+    }
 }

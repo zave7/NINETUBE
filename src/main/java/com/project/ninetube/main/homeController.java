@@ -20,24 +20,24 @@ public class homeController {
     UserService userService;
     @Autowired
     VideoVService videoVService;
-
-    @RequestMapping("/")
-    public ModelAndView home() {
-        List<VideoV> vlist = videoVService.findVideoList();
-        User user = userService.findByACCOUNT("TEST");
-        ModelAndView mv = new ModelAndView("home/home");
-        mv.addObject("videoList", vlist);
-        mv.addObject("user",user);
-        return mv;
-    }
-
-    @RequestMapping("/USER/list")
-    public ModelAndView listQuestion(Pageable pageable){
-        Page<User> list = userService.findAll(pageable);
-        ModelAndView mv = new ModelAndView("home/TESTLIST");
-        mv.addObject("userList", list);
-        return mv;
-    }
+//
+//    @RequestMapping("/")
+//    public ModelAndView home() {
+//        List<VideoV> vlist = videoVService.findVideoList();
+//        User user = userService.findByACCOUNT("TEST");
+//        ModelAndView mv = new ModelAndView("home/home");
+//        mv.addObject("videoList", vlist);
+//        mv.addObject("user",user);
+//        return mv;
+//    }
+//
+//    @RequestMapping("/USER/list")
+//    public ModelAndView listQuestion(Pageable pageable){
+//        Page<User> list = userService.findAll(pageable);
+//        ModelAndView mv = new ModelAndView("home/TESTLIST");
+//        mv.addObject("userList", list);
+//        return mv;
+//    }
 
 /*    @RequestMapping("/main")
     public ModelAndView mainpage() {
