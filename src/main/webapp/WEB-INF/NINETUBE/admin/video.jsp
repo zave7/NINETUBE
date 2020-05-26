@@ -263,7 +263,7 @@
                               <td>${videos.goodcnt}</td>
                               <td>${videos.badcnt}</td>
                               <td>
-                                <a href="#" class="btn btn-primary btn-icon-split">
+                                <a href="#" class="btn btn-primary btn-icon-split" onClick="location.href='/admin/user/videoDetail?account=${users.account}'">
                                   <input type="hidden" value="${videos.oid}">
                                   <span class="icon text-white-50">
                                     <i class="fas fa-flag"></i>

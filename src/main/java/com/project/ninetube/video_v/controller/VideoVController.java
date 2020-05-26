@@ -23,4 +23,12 @@ public class VideoVController {
 
         return "admin/video";
     }
+
+    @GetMapping(value = "/admin/user/videoDetail")
+    public String findDetailVideo(Model model){
+//        List<VideoV> list = videoVService.findByCreator(account);
+//        model.addAttribute("videoList", list);
+
+        return "admin/videoDetail";
+    }
 }
