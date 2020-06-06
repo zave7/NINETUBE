@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
@@ -17,4 +19,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 //
 //    // 회원정보 인서트
 //    public int insertUserInfo(User user);
+
+    // 이메일 조회
+    Optional<User> findByEMAIL(String email);
 }

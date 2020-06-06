@@ -67,4 +67,9 @@ public class User {
         this.ACCESSGRADE = ACCESSGRADE;
         this.EMAIL = EMAIL;
     }
+
+    public User update(String name) {
+        this.NAME = name;
+        return this;
+    }
 }
