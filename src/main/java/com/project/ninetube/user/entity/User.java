@@ -6,36 +6,70 @@ import org.hibernate.annotations.DynamicInsert;
 import javax.persistence.*;
 import java.util.Date;
 
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
 @Entity
-@DynamicInsert
-@Getter @Setter
 @Data
+@DynamicInsert
 @Table(name = "NUSER")
 public class User {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
-    private String oid;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public String OID;
+
     @Column
-    private String account;
+    public String ACCOUNT;
+
     @Column
-    private String name;
+    public String NAME;
+
     @Column
-    private String password;
+    public String PASSWORD;
+
     @Column
-    private int delstatus;
+    public int DELSTATUS;
+
     @Column
-    private int gender;
+    public int GENDER;
+
     @Column
-    private String birth;
+    public String BIRTH;
+
     @Column
-    private char logintype;
+    public char LOGINTYPE;
+
     @Column
-    private String createdate;
+    public Date CREATEDATE;
+
     @Column
-    private String deldate;
+    public Date DELDATE;
+
     @Column
-    private int accessgrade;
+    public int ACCESSGRADE;
+
     @Column
-    private String email;
+    public String EMAIL;
+
+    @Builder
+    public User(String OID, String ACCOUNT, String NAME, String PASSWORD, int DELSTATUS, int GENDER, String BIRTH, char LOGINTYPE, Date CREATEDATE, Date DELDATE, int ACCESSGRADE, String EMAIL){
+        this.OID = OID;
+        this.ACCOUNT = ACCOUNT;
+        this.NAME = NAME;
+        this.PASSWORD = PASSWORD;
+        this.DELSTATUS = DELSTATUS;
+        this.GENDER = GENDER;
+        this.BIRTH = BIRTH;
+        this.LOGINTYPE = LOGINTYPE;
+        this.CREATEDATE = CREATEDATE;
+        this.DELDATE = DELDATE;
+        this.ACCESSGRADE = ACCESSGRADE;
+        this.EMAIL = EMAIL;
+    }
+
+    public User update(String name) {
+        this.NAME = name;
+        return this;
+    }
 }
