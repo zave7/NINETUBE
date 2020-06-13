@@ -7,4 +7,3 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/userAuth/css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/userAuth/css/gilbut.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/userAuth/css/user-custom.css">
-</head>

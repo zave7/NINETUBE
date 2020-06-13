@@ -1,6 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language='java' %>
 
 	<%@ include file="/WEB-INF/NINETUBE/naccount/common/jsp/css/userAuthStyle.jsp" %>
+	<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
 
 <body>
 	<div id="gilbut" class="membership">
@@ -40,5 +43,29 @@
 
         <%@ include file="/WEB-INF/NINETUBE/naccount/common/jsp/user-footer.jsp" %>
 	</div>
+    <script>
+
+        var clientInfo;
+
+        const naverBtn = document.querySelector('div.login_sns_wrap > a#naver');
+
+        naverBtn.addEventListener('click', function(event) {
+            naverLogin();
+        });
+
+        var clientInfoResultAction = function() {
+                    console.log(clientInfo);
+                }
+
+        const naverLogin = function() {
+         // window.name = "부모창 이름";
+              window.name = "parentForm";
+              // window.open("open할 window", "자식창 이름", "팝업창 옵션");
+              openWin = window.open("http://127.0.0.1:8080/APIExamNaverLogin.html",
+                      "childForm", "width=570, height=350, resizable = no, scrollbars = no");
+          }
+
+
+     </script>
 </body>
 </html>

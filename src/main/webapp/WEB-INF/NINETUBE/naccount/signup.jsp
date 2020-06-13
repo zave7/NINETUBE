@@ -2,6 +2,7 @@
 
 	<%@ include file="/WEB-INF/NINETUBE/naccount/common/jsp/css/userAuthStyle.jsp" %>
 
+</head>
 <body>
 	<div id="gilbut" class="membership">
 		<%@ include file="/WEB-INF/NINETUBE/naccount/common/jsp/user-header.jsp" %>
@@ -24,23 +25,9 @@
                 </form>
             </article>
         </section>
-        <script type="text/javascript">
-            window.name='mainwin';
-            function sns_pop(sns_gubun){
-                if(sns_gubun == "N"){
-                    window.open('/sns/naver/login.php','naver_login','_blank');
-                }else if(sns_gubun == "K"){
-                    window.open('/sns/kakao/login.php','kakao_login','width=470px,height=620px','_blank');
-                }else if(sns_gubun == "F"){
-                    window.open('/sns/facebook/login.php','facebook_login','width=1100px,height=820px','_blank');
-                }else if(sns_gubun == "G"){
-                    window.open('/sns/google/login.php','google_login','width=1000px,height=900px','_blank');
-                }
-            }
-
-        </script>
 
 		<%@ include file="/WEB-INF/NINETUBE/naccount/common/jsp/user-footer.jsp" %>
 	</div>
+
 </body>
 </html>
