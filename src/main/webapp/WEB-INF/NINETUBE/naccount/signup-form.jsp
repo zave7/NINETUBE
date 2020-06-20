@@ -99,33 +99,5 @@
 		<%@ include file="/WEB-INF/NINETUBE/naccount/common/jsp/user-footer.jsp" %>
 	</div>
 	<script src="/resources/userAuth/js/signUp.js"></script>
-	<script>
-	      const naver_id_login = new naver_id_login("1Si2qyzIE80rP3GhK8ld", "http://127.0.0.1:80/sign/up-form");
-
-	      const naver_email;
-	      const naver_name;
-            alert("네아로");
-	      if(naver_id_login != undefined) {
-              // 접근 토큰 값 출력
-              alert(naver_id_login.oauthParams.access_token);
-              // 네이버 사용자 프로필 조회
-              naver_id_login.get_naver_userprofile("naverSignInCallback()");
-              // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
-              function naverSignInCallback() {
-                alert(naver_id_login.getProfileData('email'));
-                naver_email = naver_id_login.getProfileData('email').split('@');
-                alert(naver_id_login.getProfileData('name'));
-                naver_name = naver_id_login.getProfileData('name');
-              }
-              const input_name = document.getElementById('name');
-              input_name.value = naver_name;
-              const input_email_1 = document.getElementById('email_1');
-              input_email_1.value = naver_email[0];
-              const input_email_2 = document.getElementById('email_2');
-          }
-
-
-
-	</script>
 </body>
 </html>
