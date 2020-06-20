@@ -63,7 +63,7 @@
          // window.name = "부모창 이름";
               window.name = "parentForm";
               // window.open("open할 window", "자식창 이름", "팝업창 옵션");
-              openWin = window.open("http://127.0.0.1:8080/APIExamNaverLogin.html",
+              openWin = window.open("http://127.0.0.1:80/APIExamNaverLogin.html",
                       "childForm", "width=570, height=350, resizable = no, scrollbars = no");
           }
 

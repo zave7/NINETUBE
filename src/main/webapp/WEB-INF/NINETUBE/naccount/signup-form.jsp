@@ -100,7 +100,7 @@
 	</div>
 	<script src="/resources/userAuth/js/signUp.js"></script>
 	<script>
-	      const naver_id_login = new naver_id_login("1Si2qyzIE80rP3GhK8ld", "http://127.0.0.1:8080/sign/up-form");
+	      const naver_id_login = new naver_id_login("1Si2qyzIE80rP3GhK8ld", "http://127.0.0.1:80/sign/up-form");
 
 	      const naver_email;
 	      const naver_name;
