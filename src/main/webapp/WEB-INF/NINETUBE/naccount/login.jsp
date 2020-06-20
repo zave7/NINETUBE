@@ -54,8 +54,10 @@
         });
 
         var clientInfoResultAction = function() {
-                    console.log(clientInfo);
-                }
+            console.log(clientInfo);
+
+
+        }
 
         const naverLogin = function() {
          // window.name = "부모창 이름";

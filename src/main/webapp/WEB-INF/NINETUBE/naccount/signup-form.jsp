@@ -122,8 +122,6 @@
               const input_email_1 = document.getElementById('email_1');
               input_email_1.value = naver_email[0];
               const input_email_2 = document.getElementById('email_2');
-
-
           }
 
 

@@ -42,4 +42,12 @@ public class SignController {
         mav.setViewName("/naccount/login");
         return mav;
     }
+
+    @RequestMapping(value = "/check", method = RequestMethod.POST)
+    public ModelAndView checkAccount(ModelAndView mav, String loginType, String name, String email) {
+
+
+
+        return mav;
+    }
 }
