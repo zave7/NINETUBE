@@ -3,6 +3,7 @@ import com.project.ninetube.user.entity.User;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.text.SimpleDateFormat;
 import java.util.Map;
 
 @Getter
@@ -12,14 +13,16 @@ public class OAuthAttributes {
     private String name;
     private String email;
     private String picture;
+    private char loginType;
 
     @Builder
-    public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, String name, String email, String picture) {
+    public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, String name, String email, String picture, char loginType) {
         this.attributes = attributes;
         this.nameAttributeKey = nameAttributeKey;
         this.name = name;
         this.email = email;
         this.picture = picture;
+        this.loginType = loginType;
     }
 
     public static OAuthAttributes of(String registrationId, String userNameAttributeName, Map<String, Object> attributes) {
@@ -37,6 +40,7 @@ public class OAuthAttributes {
 //                .picture((String) attributes.get("picture"))
                 .attributes(attributes)
                 .nameAttributeKey(userNameAttributeName)
+                .loginType('G')
                 .build();
     }
 
@@ -49,14 +53,22 @@ public class OAuthAttributes {
 //                .picture((String) response.get("profile_image"))
                 .attributes(response)
                 .nameAttributeKey(userNameAttributeName)
+                .loginType('N')
                 .build();
     }
 
     public User toEntity() {
+        SimpleDateFormat format1 = new SimpleDateFormat ( "HHmmss");
+        String format_time1 = format1.format (System.currentTimeMillis());
+
         return User.builder()
+                .OID(format_time1)
+                .ACCOUNT(email)
                 .NAME(name)
                 .EMAIL(email)
-//                .picture(picture)
+                .DELSTATUS(0)
+                .GENDER(0)
+                .LOGINTYPE(loginType)
                 .ACCESSGRADE(0)
                 .build();
     }

@@ -7,10 +7,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.Optional;
-
-@Repository
 import java.util.List;
 
+@Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
 //    // 패스워드 조회
@@ -30,5 +29,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
     //NUSER의 데이터 전체 SELECT
     public List<User> findAll();
 
-    public List<User> findAllByDelstatus(int value);
+    //public List<User> findAllByDelstatus(int value);
 }

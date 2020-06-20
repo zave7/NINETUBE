@@ -42,7 +42,27 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public List<User> getAllUsersDelstatus(int value) {
+   /* public List<User> getAllUsersDelstatus(int value) {
         return userRepository.findAllByDelstatus(value);
+    }*/
+
+    public int checkUserDuplicatedId(String userId) {
+        return 0;
+//        return userRepository.selectUserId(userId) == 0 ?
+//                UserConstants.USER_SUCCESS : UserConstants.USER_DUPLICATED_ID;
+
+    }
+
+    public int createUser(User user) {
+//        User test = userRepository.save(user);
+        return 0;
+    }
+
+    public int checkPassword(User user) {
+        return 0;
+    }
+
+    public boolean vaildateUserData(User user) {
+        return false;
     }
 }

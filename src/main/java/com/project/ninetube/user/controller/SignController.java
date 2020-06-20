@@ -1,9 +1,10 @@
 package com.project.ninetube.user.controller;
 
 import com.project.ninetube.auth.dto.SessionUser;
-import com.project.ninetube.user.service.UserServiceImpl;
+import com.project.ninetube.user.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,9 +18,6 @@ import javax.servlet.http.HttpSession;
 public class SignController {
 
     private final HttpSession httpSession;
-
-    @Autowired
-    private UserServiceImpl userService;
 
 
     // 회원가입 상세 페이지 이동
@@ -48,6 +46,10 @@ public class SignController {
     public ModelAndView moveSignInForm(ModelAndView mav) {
         mav.setViewName("/naccount/login");
         SessionUser sessionUser = (SessionUser) httpSession.getAttribute("user");
+
+        if(sessionUser != null){
+            System.out.println("test");
+        }
         return mav;
     }
 
