@@ -150,4 +150,8 @@ buildNumber.properties
 
 .mvn/timing.properties
 
+.idea/gradle.xml
+
 ########## -- Maven.gitignore End
+
+application-oauth.properties

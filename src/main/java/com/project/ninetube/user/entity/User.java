@@ -4,19 +4,20 @@ import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Getter
-@Entity
 @Data
 @DynamicInsert
+@NoArgsConstructor
 @Table(name = "NUSER")
+@Getter
+@Entity
 public class User {
 
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public String OID;
 
     @Column
@@ -41,10 +42,10 @@ public class User {
     public char LOGINTYPE;
 
     @Column
-    public Date CREATEDATE;
+    public LocalDateTime CREATEDATE;
 
     @Column
-    public Date DELDATE;
+    public LocalDateTime DELDATE;
 
     @Column
     public int ACCESSGRADE;
@@ -53,7 +54,7 @@ public class User {
     public String EMAIL;
 
     @Builder
-    public User(String OID, String ACCOUNT, String NAME, String PASSWORD, int DELSTATUS, int GENDER, String BIRTH, char LOGINTYPE, Date CREATEDATE, Date DELDATE, int ACCESSGRADE, String EMAIL){
+    public User(String OID, String ACCOUNT, String NAME, String PASSWORD, int DELSTATUS, int GENDER, String BIRTH, char LOGINTYPE, LocalDateTime CREATEDATE, LocalDateTime DELDATE, int ACCESSGRADE, String EMAIL){
         this.OID = OID;
         this.ACCOUNT = ACCOUNT;
         this.NAME = NAME;
@@ -66,5 +67,10 @@ public class User {
         this.DELDATE = DELDATE;
         this.ACCESSGRADE = ACCESSGRADE;
         this.EMAIL = EMAIL;
+    }
+
+    public User update(String name) {
+        this.NAME = name;
+        return this;
     }
 }

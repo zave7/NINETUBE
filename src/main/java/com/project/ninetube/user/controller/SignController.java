@@ -1,18 +1,23 @@
 package com.project.ninetube.user.controller;
 
-import com.project.ninetube.user.service.UserServiceImpl;
+import com.project.ninetube.auth.dto.SessionUser;
+import com.project.ninetube.user.entity.User;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/sign")
 public class SignController {
 
-    @Autowired
-    private UserServiceImpl userService;
+    private final HttpSession httpSession;
 
 
     // 회원가입 상세 페이지 이동
@@ -40,6 +45,18 @@ public class SignController {
     @RequestMapping(value = "/in", method = RequestMethod.GET)
     public ModelAndView moveSignInForm(ModelAndView mav) {
         mav.setViewName("/naccount/login");
+        SessionUser sessionUser = (SessionUser) httpSession.getAttribute("user");
+
+        if(sessionUser != null){
+            System.out.println("test");
+        }
+        return mav;
+    }
+
+    //회원가입 성공
+    @RequestMapping(value = "/up/success", method = RequestMethod.GET)
+    public ModelAndView successSignUp(ModelAndView mav) {
+        mav.setViewName("naccount/main");
         return mav;
     }
 
